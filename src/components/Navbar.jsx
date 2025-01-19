@@ -14,9 +14,11 @@ export default function Navbar() {
         <nav className=' bg-gray-800 w-full px-'>
             <div className="flex items-center justify-between px-4 py-3">
 
-                <div className='flex items-center space-x-2'>
-                    <img src={pokemonLogo} alt="Pokemon Logo" className='h-8 w-auto' />
-                </div>
+                <Link to="/">
+                    <div className='flex items-center space-x-2'>
+                        <img src={pokemonLogo} alt="Pokemon Logo" className='h-8 w-auto' />
+                    </div>
+                </Link>
 
                 <button
                     type="button"
