@@ -17,8 +17,8 @@ export default function FavoritesPage() {
                 <div className='text-center '>
                     <p className='text-center text-yellow-600 mt-20 mb-10 text-lg sm:text-xl font-semibold'>No favorites yet 😓</p>
 
-                    <Link to="/" className="rounded-xl px-4 py-3 text-gray-200 hover:text-white bg-blue-700 active:text-yellow-400 font-semibold">
-                        Find some!
+                    <Link to="/" className="rounded-2xl px-8 py-4  hover:text-white bg-blue-800 hover:bg-blue-600 active:bg-yellow-400 active:text-black font-bold">
+                        <span className=' text-lg md:text-xl'>🕵️</span> Find some!
                     </Link>
                 </div>
             ) : (
