@@ -1,20 +1,9 @@
 import PokemonCard from '../components/PokemonCard'
+import { fetchPokemons } from '../services/pokemonService'
 
 export default function HomePage() {
-    const LIMIT = 20;
 
-    async function fetchPokemons(offset = 0) {
-        const response = await fetch(
-            `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${LIMIT}`
-        );
-        if (!response.ok) {
-            throw new Error("Failed to fetch Pokemon list");
-        }
-        const data = await response.json();
-        console.log(data.results);
-    }
-
-    fetchPokemons();
+    fetchPokemons(0);
 
     return (
         <div className=' bg-blue-400 w-screen'>
