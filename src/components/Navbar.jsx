@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import pokemonLogo from '../assets/pokemonLogo.png'
 
 export default function Navbar() {
@@ -12,6 +13,7 @@ export default function Navbar() {
     return (
         <nav className=' bg-gray-800 w-full px-'>
             <div className="flex items-center justify-between px-4 py-3">
+
                 <div className='flex items-center space-x-2'>
                     <img src={pokemonLogo} alt="Pokemon Logo" className='h-8 w-auto' />
                 </div>
@@ -53,6 +55,21 @@ export default function Navbar() {
                     )}
                 </button>
             </div>
-        </nav>
+            {isOpen && (
+                <div className=' md:hidden px-4 pb-3 space-y-2 bg-gray-700'>
+                    <Link to='/' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-gray-700 active:text-indigo-500'>
+                        Home
+                    </Link>
+                    <Link to='/favorites' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-gray-700 active:text-yellow-400'>
+                        Favorites
+                    </Link>
+                    <a href="https://pokeapi.co/"
+                        target="_blank"
+                        rel="noreferrer" onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-gray-700 active:text-indigo-500'>
+                        PokeAPI
+                    </a>
+                </div>
+            )}
+        </nav >
     )
 }
