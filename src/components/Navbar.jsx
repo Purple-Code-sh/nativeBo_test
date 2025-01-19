@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import pokemonLogo from '../assets/pokemonLogo.png'
+import { useHamburguerOpen } from '../store/hamburguerOpen'
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
 
-    // Toggle the menu on hamburger click
-    const handleToggle = () => {
-        setIsOpen(!isOpen);
-    };
+    const { hamburguerIsOpen, handleToggle, closeHamburguer } = useHamburguerOpen();
 
     return (
         <nav className=' bg-gray-800/70 w-full px-2 sticky top-0 z-20 backdrop-filter backdrop-blur-lg'>
@@ -27,7 +24,7 @@ export default function Navbar() {
                     onClick={handleToggle}
                 >
                     {/* Icon: Hamburger / Close depending on state */}
-                    {isOpen ? (
+                    {hamburguerIsOpen ? (
                         <svg
                             className="h-6 w-6"
                             viewBox="0 0 24 24"
@@ -57,7 +54,7 @@ export default function Navbar() {
                     )}
                 </button>
 
-                <div className="hidden z-30 md:flex md:items-center space-x-6">
+                <div className="hidden z-40 md:flex md:items-center space-x-6">
                     <Link to="/" className="rounded-xl px-3 py-2 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400">
                         Home
                     </Link>
@@ -74,17 +71,17 @@ export default function Navbar() {
                     </a>
                 </div>
             </div>
-            {isOpen && (
-                <div className=' md:hidden px-4 pb-3 space-y-2 z-40 text-center'>
-                    <Link to='/' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
+            {hamburguerIsOpen && (
+                <div className=' md:hidden px-4 pb-3 space-y-2 z-50 text-center'>
+                    <Link to='/' onClick={closeHamburguer} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400 z-50'>
                         Home
                     </Link>
-                    <Link to='/favorites' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
+                    <Link to='/favorites' onClick={closeHamburguer} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400 z-50'>
                         Favorites
                     </Link>
                     <a href="https://pokeapi.co/"
                         target="_blank"
-                        rel="noreferrer" onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
+                        rel="noreferrer" onClick={closeHamburguer} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400 z-50'>
                         PokeAPI
                     </a>
                 </div>

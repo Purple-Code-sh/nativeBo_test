@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-
+import { useHamburguerOpen } from '../store/hamburguerOpen'
 export default function ScrollToTopButton() {
+    const { hamburguerIsOpen } = useHamburguerOpen();
+
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -25,17 +27,20 @@ export default function ScrollToTopButton() {
 
     if (!isVisible) return null;
 
-    return (
-        <button
-            onClick={scrollToTop}
-            className="
-        fixed top-20 left-1/2 -translate-x-1/2 z-30 font-bold py-2 px-6 rounded-xl shadow text-sm lg:text-base
-        bg-cyan-600/50 hover:bg-cyan-600/80 backdrop-filter backdrop-blur-md
-        text-white active:text-black active:bg-yellow-600
-      "
-            aria-label="Scroll to top"
-        >
-            Go to Start 👆
-        </button>
-    );
+    if (!hamburguerIsOpen) {
+        return (
+            <button
+                onClick={scrollToTop}
+                className="
+            fixed top-20 left-1/2 -translate-x-1/2 z-30 font-bold py-2 px-6 rounded-xl shadow text-sm lg:text-base
+            
+            bg-cyan-600/50 hover:bg-cyan-600/80 backdrop-filter backdrop-blur-md
+            text-white active:text-black active:bg-yellow-600
+            "
+                aria-label="Scroll to top"
+            >
+                Go to Start 👆
+            </button>
+        );
+    }
 }
