@@ -52,6 +52,21 @@ export default function HomePage() {
         };
     }, [pokemonList, loading]);
 
+
+    // Favorites Management
+
+    const [favorites, setFavorites] = useState([]);
+
+    // Get Favorites from localStorage on mount
+    useEffect(() => {
+        const storedFavorites = localStorage.getItem("favorites");
+        if (storedFavorites) {
+
+            //Something
+        }
+    }, []);
+
+
     return (
         <div className=' w-screen px-4 py-6'>
 
