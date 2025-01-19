@@ -63,7 +63,7 @@ export default function HomePage() {
                 <PokemonSearch />
             </div>
 
-            <h1 className="capitalize text-center font-bold text-2xl my-4 text-yellow-600/90">All pokemons</h1>
+            <h1 className="capitalize text-center font-bold text-xl my-4 text-yellow-600/90">All pokemons</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 

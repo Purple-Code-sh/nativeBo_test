@@ -22,7 +22,7 @@ export default function Navbar() {
 
                 <button
                     type="button"
-                    className="md:hidden inline-flex items-center justify-center p-2 rounded-md z-30
+                    className="md:hidden inline-flex items-center justify-center p-2 rounded-md z-40
                      text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none"
                     onClick={handleToggle}
                 >
@@ -75,7 +75,7 @@ export default function Navbar() {
                 </div>
             </div>
             {isOpen && (
-                <div className=' md:hidden px-4 pb-3 space-y-2 z-30 text-center'>
+                <div className=' md:hidden px-4 pb-3 space-y-2 z-40 text-center'>
                     <Link to='/' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
                         Home
                     </Link>
