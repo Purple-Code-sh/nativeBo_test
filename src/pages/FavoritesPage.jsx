@@ -1,6 +1,7 @@
 import { useFavoritePokemons } from '../store/favoritePokemons';
-import PokemonCard from '../components/PokemonCard';
 import { Link } from 'react-router-dom';
+import PokemonCard from '../components/PokemonCard';
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 export default function FavoritesPage() {
     // Access the store
@@ -32,6 +33,9 @@ export default function FavoritesPage() {
                     ))}
                 </div>
             )}
+
+            {/* The floating scroll-to-top button */}
+            <ScrollToTopButton />
         </div>
     )
 }

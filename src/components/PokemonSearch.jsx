@@ -49,13 +49,13 @@ export default function PokemonSearch() {
     };
 
     return (
-        <div className='flex flex-col mb-4 '>
+        <div className='flex flex-col mb-10 '>
 
             <form onSubmit={handleSearch} className="flex flex-col md:flex-row text-center mb-4">
                 <div className='flex'>
                     <input
                         type="text"
-                        placeholder="Name or Number, 202"
+                        placeholder="Type Name or Number"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className=" grow border -mr-10 py-3 px-5 rounded-l-xl border-gray-700 focus:outline-none focus:border-yellow-500 bg-gray-800 text-gray-200"
@@ -88,10 +88,17 @@ export default function PokemonSearch() {
                         types={pokemonFounded.types}
                         stats={pokemonFounded.stats}
                     />
+                    <hr className=' rounded border-gray-700 my-4' />
+
                 </div>
             }
             {isError && searchTerm &&
-                <p className='w-full text-center my-6'>Pokemon not founded 😞</p>
+                <div>
+
+                    <p className='w-full text-center my-6'>Pokemon not founded 😞</p>
+                    <hr className=' rounded border-gray-700 my-4' />
+
+                </div>
             }
 
         </div>

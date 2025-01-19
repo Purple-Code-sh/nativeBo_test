@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import { fetchPokemons } from '../services/pokemonService'
 import PokemonCard from '../components/PokemonCard'
 import PokemonSearch from '../components/PokemonSearch'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 export default function HomePage() {
     const [pokemonList, setPokemonList] = useState([]);
@@ -62,6 +63,8 @@ export default function HomePage() {
                 <PokemonSearch />
             </div>
 
+            <h1 className="capitalize text-center font-bold text-2xl my-4 text-yellow-600/90">All pokemons</h1>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
                 {pokemonList.map((pokemon) => (
@@ -84,6 +87,9 @@ export default function HomePage() {
             {/* Loading indicator */}
             {loading && <p className="text-center text-yellow-400 font-bold mt-4 text-lg">Loading Pokemons...</p>}
 
+
+            {/* The floating scroll-to-top button */}
+            <ScrollToTopButton />
         </div>
     )
 }

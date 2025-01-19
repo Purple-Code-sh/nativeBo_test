@@ -73,7 +73,7 @@ export default function PokemonCard(
       </button>
 
       {/* Name */}
-      <h2 className="capitalize font-bold text-lg mb-1">{id}. {name}</h2>
+      <h2 className="capitalize font-bold text-lg mb-1 notranslate" translate="no">{id}. {name}</h2>
 
       {/* Image */}
       <img
@@ -98,7 +98,7 @@ export default function PokemonCard(
       <div className="text-sm w-full text-gray-400">
         {stats.map((stat) => (
           <div key={stat.name} className="flex justify-between my-1">
-            <span className="capitalize">{stat.name}:</span>
+            <span className="capitalize notranslate" translate="no">{stat.name}:</span>
             <span>{stat.base}</span>
           </div>
         ))}

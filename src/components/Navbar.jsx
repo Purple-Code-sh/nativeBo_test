@@ -11,7 +11,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className=' bg-gray-800/75 w-full px-2 sticky top-0 z-20 backdrop-filter backdrop-blur-lg'>
+        <nav className=' bg-gray-800/70 w-full px-2 sticky top-0 z-20 backdrop-filter backdrop-blur-lg'>
             <div className="flex items-center justify-between px-4 py-3">
 
                 <Link to="/">
