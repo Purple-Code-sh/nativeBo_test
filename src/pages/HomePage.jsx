@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
-import PokemonCard from '../components/PokemonCard'
 import { fetchPokemons } from '../services/pokemonService'
+import PokemonCard from '../components/PokemonCard'
 
 export default function HomePage() {
     const [pokemonList, setPokemonList] = useState([]);
@@ -51,20 +51,6 @@ export default function HomePage() {
             }
         };
     }, [pokemonList, loading]);
-
-
-    // Favorites Management
-
-    const [favorites, setFavorites] = useState([]);
-
-    // Get Favorites from localStorage on mount
-    useEffect(() => {
-        const storedFavorites = localStorage.getItem("favorites");
-        if (storedFavorites) {
-
-            //Something
-        }
-    }, []);
 
 
     return (

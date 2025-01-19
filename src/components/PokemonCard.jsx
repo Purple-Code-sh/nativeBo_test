@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useFavoritePokemons } from '../store/favoritePokemons'
 
 export default function PokemonCard(
   {
@@ -7,19 +8,21 @@ export default function PokemonCard(
     image,
     types,
     stats,
-    onAddToFavorites
   }
 ) {
 
   const [isFavorite, setIsFavorite] = useState(false);
 
+  const { addFavorite, removeFavorite } = useFavoritePokemons();
+
   const handleToggleFavorite = () => {
     // Changes state to fill or not the heart button
     setIsFavorite(!isFavorite);
 
-    // Invoques parent's function
-    if (onAddToFavorites) {
-      onAddToFavorites({ id, name, image, types, stats });
+    if (!isFavorite) {
+      addFavorite({ id, name, image, types, stats });
+    } else {
+      removeFavorite(id);
     }
   };
 
