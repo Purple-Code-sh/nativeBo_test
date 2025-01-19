@@ -23,6 +23,15 @@ export default function PokemonCard(
     }
   };
 
+  const isWobbuffet = id === 202;
+
+  const filledHeartProps = isWobbuffet
+    ? { fill: "red", stroke: "red", strokeWidth: "1.5" }
+    : { fill: "#307CBF", stroke: "#307CBF", strokeWidth: "1.5" };
+
+  const outlineHeartProps = isWobbuffet
+    ? { fill: "none", stroke: "red", strokeWidth: "2" }
+    : { fill: "none", stroke: "#475569", strokeWidth: "2" };
 
   return (
     <div className="relative bg-slate-900 rounded-3xl shadow p-6 m-4 flex flex-col items-center">
@@ -36,11 +45,9 @@ export default function PokemonCard(
         {isFavorite ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="#307CBF"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="#307CBF"
             className="h-6 w-auto"
+            {...filledHeartProps}
           >
             <path
               strokeLinecap="round"
@@ -52,11 +59,9 @@ export default function PokemonCard(
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="#475569"
             className="h-6 w-auto"
+            {...outlineHeartProps}
           >
             <path
               strokeLinecap="round"
