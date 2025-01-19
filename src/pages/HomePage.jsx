@@ -21,24 +21,26 @@ export default function HomePage() {
 
 
     return (
-        <div className=' w-screen'>
+        <div className=' w-screen px-4 py-6'>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
-            {pokemonList.map((pokemon) => {
-                // console.log(pokemon);
-                return (
+                {pokemonList.map((pokemon) => {
+                    // console.log(pokemon);
+                    return (
 
-                    < PokemonCard
-                        key={pokemon.id}
-                        id={pokemon.id}
-                        name={pokemon.name}
-                        image={pokemon.image}
-                        types={pokemon.types}
-                        stats={pokemon.stats}
-                    />
-                )
-            }
-            )}
+                        < PokemonCard
+                            key={pokemon.id}
+                            id={pokemon.id}
+                            name={pokemon.name}
+                            image={pokemon.image}
+                            types={pokemon.types}
+                            stats={pokemon.stats}
+                        />
+                    )
+                }
+                )}
 
+            </div>
         </div>
     )
 }

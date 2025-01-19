@@ -14,7 +14,7 @@ export default function PokemonCard(
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleToggleFavorite = () => {
-    // Changes local state to fill or not the heart button
+    // Changes state to fill or not the heart button
     setIsFavorite(!isFavorite);
 
     // Invoques parent's function
@@ -26,7 +26,8 @@ export default function PokemonCard(
 
   return (
     <div className="relative bg-slate-900 rounded-3xl shadow p-6 m-4 flex flex-col items-center">
-      {/* Botón (icono de corazón) en esquina superior derecha */}
+
+      {/* Favorite pokemon Button */}
       <button
         onClick={handleToggleFavorite}
         className="absolute top-4 right-4"
@@ -97,6 +98,7 @@ export default function PokemonCard(
           </div>
         ))}
       </div>
+
     </div>
   );
 }
