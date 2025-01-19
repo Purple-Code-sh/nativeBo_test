@@ -11,18 +11,15 @@ export default function PokemonCard(
   }
 ) {
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { favoritePokemons, addFavorite, removeFavorite } = useFavoritePokemons();
 
-  const { addFavorite, removeFavorite } = useFavoritePokemons();
+  const isFavorite = favoritePokemons.some((fav) => fav.id === id);
 
   const handleToggleFavorite = () => {
-    // Changes state to fill or not the heart button
-    setIsFavorite(!isFavorite);
-
-    if (!isFavorite) {
-      addFavorite({ id, name, image, types, stats });
-    } else {
+    if (isFavorite) {
       removeFavorite(id);
+    } else {
+      addFavorite({ id, name, image, types, stats });
     }
   };
 
