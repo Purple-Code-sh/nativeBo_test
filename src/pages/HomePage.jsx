@@ -3,7 +3,8 @@ import { fetchPokemons } from '../services/pokemonService'
 
 export default function HomePage() {
 
-    fetchPokemons(0);
+    const pokemonsInfo = fetchPokemons(0);
+    console.log(pokemonsInfo);
 
     return (
         <div className=' bg-blue-400 w-screen'>
