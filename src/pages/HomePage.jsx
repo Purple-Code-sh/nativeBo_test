@@ -21,11 +21,11 @@ export default function HomePage() {
 
 
     return (
-        <div className=' bg-blue-400 w-screen'>
+        <div className=' w-screen'>
             This is home page
 
             {pokemonList.map((pokemon) => {
-                console.log(pokemon);
+                // console.log(pokemon);
                 return (
 
                     < PokemonCard
