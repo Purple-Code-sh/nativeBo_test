@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { fetchPokemons } from '../services/pokemonService'
 import PokemonCard from '../components/PokemonCard'
+import PokemonSearch from '../components/PokemonSearch'
 
 export default function HomePage() {
     const [pokemonList, setPokemonList] = useState([]);
@@ -57,6 +58,9 @@ export default function HomePage() {
         <div className=' w-screen px-4 py-6'>
 
             {/* Pokemon Cards render */}
+            <div className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mx-auto'>
+                <PokemonSearch />
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 

@@ -27,7 +27,7 @@ export default function PokemonCard(
 
   const filledHeartProps = isWobbuffet
     ? { fill: "red", stroke: "red", strokeWidth: "1.5" }
-    : { fill: "#307CBF", stroke: "#307CBF", strokeWidth: "1.5" };
+    : { fill: "#3186d1", stroke: "#3186d1", strokeWidth: "1.5" };
 
   const outlineHeartProps = isWobbuffet
     ? { fill: "none", stroke: "red", strokeWidth: "2" }

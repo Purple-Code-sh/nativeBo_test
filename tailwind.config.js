@@ -23,6 +23,7 @@ export default {
         'type-steel': '#62A3AD',
         'type-dragon': '#5060E0',
         'type-fairy': '#EF6BF4',
+        'blue-heart': '#3186d1',
       }
     },
   },
