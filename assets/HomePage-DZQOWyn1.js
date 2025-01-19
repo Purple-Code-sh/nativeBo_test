@@ -1,0 +1,1 @@
+import{j as e}from"./index-U9IB9Oqe.js";function s(){return e.jsx("div",{className:" bg-green-500 w-40",children:"This is a PokemonCard"})}function n(){return e.jsxs("div",{className:" bg-blue-400 w-screen",children:["This is home page",e.jsx(s,{})]})}export{n as default};
