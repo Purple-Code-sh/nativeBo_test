@@ -11,18 +11,18 @@ export default function Navbar() {
     };
 
     return (
-        <nav className=' bg-gray-800 w-full px-'>
+        <nav className=' bg-gray-800/80 w-full px-2 sticky top-0 z-20 backdrop-filter backdrop-blur-lg'>
             <div className="flex items-center justify-between px-4 py-3">
 
                 <Link to="/">
                     <div className='flex items-center space-x-2'>
-                        <img src={pokemonLogo} alt="Pokemon Logo" className='h-8 w-auto' />
+                        <img src={pokemonLogo} alt="Pokemon Logo" className='h-8 w-auto z-30' />
                     </div>
                 </Link>
 
                 <button
                     type="button"
-                    className="md:hidden inline-flex items-center justify-center p-2 rounded-md 
+                    className="md:hidden inline-flex items-center justify-center p-2 rounded-md z-30
                      text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none"
                     onClick={handleToggle}
                 >
@@ -57,7 +57,7 @@ export default function Navbar() {
                     )}
                 </button>
 
-                <div className="hidden md:flex md:items-center space-x-6">
+                <div className="hidden z-30 md:flex md:items-center space-x-6">
                     <Link to="/" className="rounded-xl px-3 py-2 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400">
                         Home
                     </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
                 </div>
             </div>
             {isOpen && (
-                <div className=' md:hidden px-4 pb-3 space-y-2 bg-gray-700'>
+                <div className=' md:hidden px-4 pb-3 space-y-2 z-30 text-center'>
                     <Link to='/' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
                         Home
                     </Link>

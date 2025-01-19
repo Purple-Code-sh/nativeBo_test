@@ -22,7 +22,6 @@ export default function HomePage() {
 
     return (
         <div className=' w-screen'>
-            This is home page
 
             {pokemonList.map((pokemon) => {
                 // console.log(pokemon);

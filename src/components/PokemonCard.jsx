@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from "react";
 
 export default function PokemonCard(
   {
@@ -7,11 +7,65 @@ export default function PokemonCard(
     image,
     types,
     stats,
-    onAddToFavorites,
+    onAddToFavorites
   }
 ) {
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleToggleFavorite = () => {
+    // Changes local state to fill or not the heart button
+    setIsFavorite(!isFavorite);
+
+    // Invoques parent's function
+    if (onAddToFavorites) {
+      onAddToFavorites({ id, name, image, types, stats });
+    }
+  };
+
+
   return (
-    <div className="bg-black rounded-3xl shadow p-6 m-4 flex flex-col items-center">
+    <div className="relative bg-slate-900 rounded-3xl shadow p-6 m-4 flex flex-col items-center">
+      {/* Botón (icono de corazón) en esquina superior derecha */}
+      <button
+        onClick={handleToggleFavorite}
+        className="absolute top-4 right-4"
+        aria-label="Favorite button"
+      >
+        {isFavorite ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#307CBF"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="#307CBF"
+            className="h-6 w-auto"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z"
+            />
+          </svg>
+
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="#475569"
+            className="h-6 w-auto"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z"
+            />
+          </svg>
+        )}
+      </button>
+
       {/* Name */}
       <h2 className="capitalize font-bold text-lg mb-1">{id}. {name}</h2>
 
@@ -44,9 +98,6 @@ export default function PokemonCard(
         ))}
       </div>
     </div>
-
-
-
   );
 }
 
