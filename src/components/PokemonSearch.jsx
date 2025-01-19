@@ -55,7 +55,7 @@ export default function PokemonSearch() {
                 <div className='flex'>
                     <input
                         type="text"
-                        placeholder="Name or Number"
+                        placeholder="Name or Number, 202"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className=" grow border -mr-10 py-3 px-5 rounded-l-xl border-gray-700 focus:outline-none focus:border-yellow-500 bg-gray-800 text-gray-200"

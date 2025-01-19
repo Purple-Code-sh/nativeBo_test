@@ -95,7 +95,7 @@ export default function PokemonCard(
       </div>
 
       {/* Stats */}
-      <div className="text-sm w-full">
+      <div className="text-sm w-full text-gray-400">
         {stats.map((stat) => (
           <div key={stat.name} className="flex justify-between my-1">
             <span className="capitalize">{stat.name}:</span>
