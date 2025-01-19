@@ -54,18 +54,35 @@ export default function Navbar() {
                         </svg>
                     )}
                 </button>
+
+                <div className="hidden md:flex md:items-center space-x-6">
+                    <Link to="/" className="rounded-xl px-3 py-2 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400">
+                        Home
+                    </Link>
+                    <Link to="/favorites" className="rounded-xl px-3 py-2 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400">
+                        Favorites
+                    </Link>
+                    <a
+                        href="https://pokeapi.co/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-xl px-3 py-2 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400"
+                    >
+                        PokeAPI
+                    </a>
+                </div>
             </div>
             {isOpen && (
                 <div className=' md:hidden px-4 pb-3 space-y-2 bg-gray-700'>
-                    <Link to='/' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-gray-700 active:text-indigo-500'>
+                    <Link to='/' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
                         Home
                     </Link>
-                    <Link to='/favorites' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-gray-700 active:text-yellow-400'>
+                    <Link to='/favorites' onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
                         Favorites
                     </Link>
                     <a href="https://pokeapi.co/"
                         target="_blank"
-                        rel="noreferrer" onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-gray-700 active:text-indigo-500'>
+                        rel="noreferrer" onClick={() => setIsOpen(false)} className=' block rounded px-2 py-1 text-gray-200 hover:text-white hover:bg-slate-700/60 active:text-yellow-400'>
                         PokeAPI
                     </a>
                 </div>
