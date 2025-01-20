@@ -72,9 +72,9 @@ export default function PokemonSearch() {
                     <button
                         type="button"
                         onClick={handleClearSearch}
-                        className="w-fit mt-4 md:mt-0 ml-2 px-6 py-2 bg-gray-800 rounded-xl text-gray-300 font-semibold flex-none self-center md:self-auto"
+                        className="w-fit mt-4 md:mt-0 ml-2 px-6 py-2 bg-gray-800 rounded-xl text-gray-300 flex-none self-center md:self-auto hover:bg-gray-700 active:bg-red-500/30"
                     >
-                        Clear
+                        Reset Search
                     </button>
                 )}
             </form>
